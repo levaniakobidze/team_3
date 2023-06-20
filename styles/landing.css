@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Open+Sans&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: #fd5334;
+  overflow-y: hidden;
+  display: flex;
+}
+.left-div {
+  display: flex;
+  flex-direction: column;
+}
+.right-div {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  height: 84px;
+  width: 923px;
+  background-color: #7025fb;
+  padding: 30px 0px 0px 60px;
+}
+.chess {
+  width: 923px;
+}
+.text-div {
+  display: flex;
+  margin-top: 265px;
+  margin-left: 85px;
+}
+h1 {
+  font-family: Nunito;
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 109px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+}
+h4 {
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 37px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 26px;
+  margin-top: 40px;
+}
+h2 {
+  font-family: Nunito;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 109px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  margin-left: 85px;
+}
+.button {
+  height: 53px;
+  width: 191px;
+  left: 1008px;
+  top: 601px;
+  border-radius: 8px;
+  padding: 13px 24px 13px 24px;
+  background-color: #212529;
+  display: flex;
+  gap: 12px;
+  margin-top: 102px;
+  margin-left: 85px;
+}
+.button-text {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+}
