@@ -4,10 +4,107 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,500&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/experience.css" />
     <title>Document</title>
   </head>
   <body>
-    <script src="./script/experience.js"></script>
+    <header>
+      <p>
+        First step is done, continue to finish onboarding
+      </p>
+    </header>
+      <div class="image">
+
+        <div>
+          <p> 
+            “Many have become chess masters; 
+            no one has become the master of chess.” 
+          </p>
+          <p>
+            - Siegbert Tarrasch
+          </p>
+        </div>
+
+      </div>
+
+      <div class="second-div">
+        <div class="check-div">
+          <div>
+            <div class="green-box">
+              <img src="images/checkicon.png" alt="">
+            </div>
+            <p>
+              Personal information
+            </p>
+          </div>
+         
+          <div>
+            <div class="number-box">
+              2
+            </div>
+            <p>
+              Chess experience
+            </p>
+          </div>
+        </div>
+
+        <div class="title-div">
+          <h1>
+            Chess experience
+          </h1>
+          <p>
+            This is basic informaton fields
+          </p>
+        </div>
+        
+        <div class="input-divs">
+           
+
+          <div class="select-inputs">
+            <div class="input-first">
+              <select id="skillLevelSelect" class="knowledge">
+                <option class="red" id="red" value="" selected>level of knowledge <p class="spanRed">ee</p> </option>
+                <option class="option-level" value="beginner">Beginner</option>
+                <option class="option-level" value="intermediate">Intermediate</option>
+                <option class="option-level" value="professional">Professional</option>
+              </select>
+            </div>
+
+            <select id="grandmastersSelect">
+              <option class="red" value=""  selected>Choose your charracter</option>
+            </select>
+
+          </div>
+         
+
+
+          <div class="input-radio">
+            <p id="radio-text">
+              Have you participated in the Redberry Championship? 
+            </p>
+            <form>
+              <label for="circle">
+                <input class="radio circle" type="radio" name="choice-radio">
+                Yes
+              </label>
+              <label for="circle">
+                <input class="radio circle" type="radio" name="choice-radio">
+                No
+              </label>
+            </form>
+       
+          </div>
+        </div>
+
+        <div class="last-div">
+          <button class="back">Back</button>
+          <button class="done">Done</button>
+        </div>
+      </div>   
   </body>
+  <script src="./script/experience.js"></script>
 </html>
+
