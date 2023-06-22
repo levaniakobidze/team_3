@@ -11,26 +11,41 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <p>
-        First step is done, continue to finish onboarding
-      </p>
-    </header>
-      <div class="image">
 
+    <div class="left-div">
+      <header>
+        <img
+          src="./Images/Khight cup logo.png"
+          alt="header-logo"
+          class="logo"
+        />
+      </header>
+      <div class="image-div">
+        <img
+          src="./Images/chess.png"
+          alt="image"
+          class="chess"
+        />
         <div>
-          <p> 
-            “Many have become chess masters; 
+          <p class="masters-txt"> 
+            “Many have become chess masters; <br>
             no one has become the master of chess.” 
           </p>
-          <p>
+          <p class="name-txt">
             - Siegbert Tarrasch
           </p>
         </div>
-
       </div>
-
+    </div>
+   
+      
+    <div class="header-two">
+      <p>
+        First step is done, continue to finish onboarding
+      </p>
+   </div>
       <div class="second-div">
+         
         <div class="check-div">
           <div>
             <div class="green-box">
@@ -100,11 +115,11 @@
             </p>
             <form>
               <label for="circle">
-                <input class="radio circle" value="yes" type="radio" name="choice-radio">
+                <input id="yes-input" class="radio circle" value="yes" type="radio" name="choice-radio">
                 Yes
               </label>
               <label for="circle">
-                <input class="radio circle" value="no" type="radio" name="choice-radio">
+                <input id="no-input" class="radio circle" value="no" type="radio" name="choice-radio">
                 No
               </label>
             </form>
@@ -114,7 +129,7 @@
 
         <div class="last-div">
           <button class="back"><a href="information.html">Back</a></button>
-          <button class="done"><a href="completed.html">Done</a> </button>
+          <button id="done-valid" class="done">Done </button>
         </div>
       </div>   
   </body>
