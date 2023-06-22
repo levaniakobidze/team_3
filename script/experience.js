@@ -1,4 +1,4 @@
-const radioCheck = document.getElementsByClassName('radio')[0, 1];
+const radioCheck = document.querySelectorAll('.radio');
 const radioText = document.getElementById('radio-text');
 const optionLevel = document.querySelectorAll('.option-level');
 const optionRed = document.getElementById('red');
@@ -23,10 +23,14 @@ optionLevel.forEach((element) => {
     element.addEventListener('click', (event) => {
         document.querySelector('.textBox').value = event.target.innerText;
         greenBox.classList.add('number-boxActive');
-
+        localStorage.setItem('level', element.textContent);
     });
 });
 
+// optionLevel.forEach((level)=>{
+//     localStorage.setItem('level', level.textContent);
+//     console.log(level.textContent);  
+// });
 
 //select character
 fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
@@ -66,14 +70,13 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
 
                 optionLevelTwo.forEach((element) => {
                         element.addEventListener('click', () => {
-                        document.querySelector('.textBoxTwo').value = element.childNodes[0].innerText;
-                        greenBox.classList.add('number-boxActive');
+                            document.querySelector('.textBoxTwo').value = element.childNodes[0].innerText;
+                            greenBox.classList.add('number-boxActive');
+                            localStorage.setItem('character', element.textContent);
                     });
-                })
-                
+                })           
               
             });
-      
         })
         .catch(error => {
             console.error('Error:', error);
@@ -81,15 +84,31 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
 
 
 //radio check 
-const spans = document.createElement('span');
-spans.textContent= '*';
-spans.classList.add('spanRed');
+// const spans = document.createElement('span');
+// spans.textContent= '*';
+// spans.classList.add('spanRed');
+// radioText.appendChild(spans);
+// const spans = document.createElement('span');
+// spans.textContent= '*';
+// spans.classList.add('spanRed');
+// radioText.appendChild(spans);
 
-radioText.appendChild(spans);
-radioCheck.addEventListener('click', () =>  {
-    radioText.removeChild(spans);
-    greenBox.classList.add('number-boxActive');
+
+radioCheck.forEach((element)=>{
+    const spans = document.getElementById('spanR');
+    element.addEventListener('click', (event) =>  {
+        spans.classList.add('none');
+        greenBox.classList.add('number-boxActive');
+        localStorage.setItem('participate', event.target.value);
+    });
+    
 });
+
+
+// radioCheck.addEventListener('click', (event) =>  {
+//     // radioText.removeChild(spans);
+//     greenBox.classList.add('number-boxActive');
+// });
 
 
 
