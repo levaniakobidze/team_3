@@ -8,6 +8,52 @@ const grandSpan = document.querySelectorAll('.grandmaster-option');
 const redFlag = document.getElementById('placeHold');
 const redFlagTwo = document.getElementById('placeHoldTwo');
 const greenBox = document.getElementById('box');
+const done = document.getElementById('done-valid');
+
+
+// Retrieve stored values from localStorage
+const storedLevel = localStorage.getItem('level');
+const storedCharacter = localStorage.getItem('character');
+const storedParticipate = localStorage.getItem('participate');
+
+// Restore values to the respective elements if they exist
+if (storedLevel) {
+  document.querySelector('.textBox').value = storedLevel;
+  greenBox.classList.add('number-boxActive');
+  redFlag.classList.remove('placeholder');
+
+}
+
+if (storedCharacter) {
+  document.querySelector('.textBoxTwo').value = storedCharacter;
+  greenBox.classList.add('number-boxActive');
+  redFlagTwo.classList.remove('placeholder');
+}
+
+if (storedParticipate) {
+    const spans = document.getElementById('spanR');
+    if(storedParticipate=='yes'){
+        document.getElementById('yes-input').checked=true;
+    } 
+    else if(storedParticipate=='no'){
+        document.getElementById('no-input').checked=true;
+    }
+  spans.classList.add('none');
+  greenBox.classList.add('number-boxActive');
+}
+
+done.addEventListener('click', ()=>{
+    if(!storedLevel || !storedParticipate || !storedCharacter){
+        return;
+    }else{
+        window.location.assign('completed.html');
+    }
+    fetch('')
+        localStorage.clear();
+        document.getElementById('yes-input').checked=false;
+        document.getElementById('no-input').checked=false;
+})
+
 
 inputFirst.addEventListener('click', () => {
     inputFirst.classList.toggle('active');
@@ -26,11 +72,6 @@ optionLevel.forEach((element) => {
         localStorage.setItem('level', element.textContent);
     });
 });
-
-// optionLevel.forEach((level)=>{
-//     localStorage.setItem('level', level.textContent);
-//     console.log(level.textContent);  
-// });
 
 //select character
 fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
@@ -82,33 +123,15 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
             console.error('Error:', error);
 });
 
-
-//radio check 
-// const spans = document.createElement('span');
-// spans.textContent= '*';
-// spans.classList.add('spanRed');
-// radioText.appendChild(spans);
-// const spans = document.createElement('span');
-// spans.textContent= '*';
-// spans.classList.add('spanRed');
-// radioText.appendChild(spans);
-
-
 radioCheck.forEach((element)=>{
     const spans = document.getElementById('spanR');
+
     element.addEventListener('click', (event) =>  {
         spans.classList.add('none');
         greenBox.classList.add('number-boxActive');
         localStorage.setItem('participate', event.target.value);
-    });
-    
+    });   
 });
-
-
-// radioCheck.addEventListener('click', (event) =>  {
-//     // radioText.removeChild(spans);
-//     greenBox.classList.add('number-boxActive');
-// });
 
 
 
