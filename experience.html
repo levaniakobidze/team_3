@@ -4,10 +4,120 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,500&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/experience.css" />
     <title>Document</title>
   </head>
   <body>
-    <script src="./script/experience.js"></script>
+    <header>
+      <p>
+        First step is done, continue to finish onboarding
+      </p>
+    </header>
+      <div class="image">
+
+        <div>
+          <p> 
+            “Many have become chess masters; 
+            no one has become the master of chess.” 
+          </p>
+          <p>
+            - Siegbert Tarrasch
+          </p>
+        </div>
+
+      </div>
+
+      <div class="second-div">
+        <div class="check-div">
+          <div>
+            <div class="green-box">
+              <img src="images/checkicon.png" alt="">
+            </div>
+            <p>
+              Personal information
+            </p>
+          </div>
+         <div class="hr">
+          <hr>
+         </div>
+          <div>
+            <div class="number-box" id="box">
+              2
+            </div>
+            <p>
+              Chess experience
+            </p>
+          </div>
+        </div>
+
+        <div class="title-div">
+          <h1>
+            Chess experience
+          </h1>
+          <p>
+            This is basic informaton fields
+          </p>
+        </div>
+        
+        <div class="input-divs">
+           
+          <div class="select-inputs">
+
+            <div class="input-first">
+              <div class="input">
+                <input type="text" class="red textBox" placeholder="level of knowledge" id="red" readonly />
+                <span id="placeHold" class="placeholder"></span>
+              </div>
+              <div id="skillLevelSelect" class="select">
+                <div  class="option-level">Beginner</div>
+                <div  class="option-level">Intermediate</div>
+                <div  class="option-level">Professional</div>
+              </div>
+            </div>
+
+            <div class="input-firstTwo">
+              <div class="input">
+                <input type="text" class="red textBoxTwo" placeholder="choose your character" id="red" readonly />
+                <span id="placeHoldTwo" class="placeholder two"></span>
+              </div>
+              <div class="selectTwo" id="grandmastersSelect">
+                  <p class="total">
+                    (Total 4)
+                  </p>
+              </div>
+            </div>
+
+          </div>
+         
+
+
+          <div class="input-radio">
+            <p id="radio-text">
+              Have you participated in the Redberry Championship? <span id="spanR" class="spanRed">*</span>
+            </p>
+            <form>
+              <label for="circle">
+                <input class="radio circle" value="yes" type="radio" name="choice-radio">
+                Yes
+              </label>
+              <label for="circle">
+                <input class="radio circle" value="no" type="radio" name="choice-radio">
+                No
+              </label>
+            </form>
+       
+          </div>
+        </div>
+
+        <div class="last-div">
+          <button class="back"><a href="information.html">Back</a></button>
+          <button class="done"><a href="completed.html">Done</a> </button>
+        </div>
+      </div>   
   </body>
+  <script src="./script/experience.js"></script>
 </html>
+
