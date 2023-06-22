@@ -2,29 +2,31 @@ const radioCheck = document.getElementsByClassName('radio')[0, 1];
 const radioText = document.getElementById('radio-text');
 const optionLevel = document.querySelectorAll('.option-level');
 const optionRed = document.getElementById('red');
+const inputFirst = document.querySelector('.input-first');
+const inputFirstTwo = document.querySelector('.input-firstTwo');
+const grandSpan = document.querySelectorAll('.grandmaster-option');
+const redFlag = document.getElementById('placeHold');
+const redFlagTwo = document.getElementById('placeHoldTwo');
+const greenBox = document.getElementById('box');
 
-// const spans = document.createElement('span');
-// spans.textContent = '*';
-// spans.classList.add('spanRed');
+inputFirst.addEventListener('click', () => {
+    inputFirst.classList.toggle('active');
+    redFlag.classList.remove('placeholder');
+});
 
-// function toggleSpan() {
-//   if (!radioCheck.checked && !radioText.contains(spans)) {
-//     radioText.appendChild(spans);
-//   } else if (radioCheck.checked && radioText.contains(spans)) {
-//     radioText.removeChild(spans);
-//   }
-// }
+inputFirstTwo.addEventListener('click',() =>{
+    inputFirstTwo.classList.toggle('active');
+    redFlagTwo.classList.remove('placeholder');
+} )
 
-// radioCheck.addEventListener('change', toggleSpan);
+optionLevel.forEach((element) => {
+    element.addEventListener('click', (event) => {
+        document.querySelector('.textBox').value = event.target.innerText;
+        greenBox.classList.add('number-boxActive');
 
+    });
+});
 
-// optionLevel.addEventListener('click', () => {
-//   if (!optionRed.contains(spans)) {
-//     optionRed.appendChild(spans);
-//   } else {
-//     optionRed.removeChild(spans);
-//   }
-// });
 
 //select character
 fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
@@ -32,12 +34,15 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
         .then(grandmasters => {
             const select = document.getElementById('grandmastersSelect');
 
+
+
             grandmasters.forEach(grandmaster => {
                 const name = grandmaster.name;
                 const id = grandmaster.id;
                 const imageUrl = grandmaster.image;
 
-                const option = new Option(name, id);
+                const div = document.createElement('div');
+                div.classList.add('option-levelTwo');
                 const span = document.createElement('span');
                 const image = document.createElement('img');
              
@@ -51,10 +56,22 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
                 // Create a text node for the grandmaster name
                 const textNode = document.createTextNode(name);
 
-                span.appendChild(image);
                 span.appendChild(textNode);
-                option.appendChild(span);
-                select.append(option);
+                span.appendChild(image);
+                div.id = id;
+                div.appendChild(span);
+                select.append(div);
+
+                const optionLevelTwo = document.querySelectorAll('.option-levelTwo');
+
+                optionLevelTwo.forEach((element) => {
+                        element.addEventListener('click', () => {
+                        document.querySelector('.textBoxTwo').value = element.childNodes[0].innerText;
+                        greenBox.classList.add('number-boxActive');
+                    });
+                })
+                
+              
             });
       
         })
@@ -71,24 +88,8 @@ spans.classList.add('spanRed');
 radioText.appendChild(spans);
 radioCheck.addEventListener('click', () =>  {
     radioText.removeChild(spans);
+    greenBox.classList.add('number-boxActive');
 });
 
-// if(!radioCheck.checked){
-//     radioText.appendChild(spans);
-// } else{
-//     radioText.removeChild(spans);
-// }
 
-optionRed.classList.add('redFlag');
-
-optionLevel.forEach(option => {
-    option.addEventListener('click', () => {
-        optionRed.classList.remove('redFlag');
-    });
-  });
-
-// optionRed.appendChild(spans);
-// optionLevel.addEventListener('click', () => {
-//     optionRed.removeChild(spans);
-// });
 

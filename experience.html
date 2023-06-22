@@ -40,9 +40,11 @@
               Personal information
             </p>
           </div>
-         
+         <div class="hr">
+          <hr>
+         </div>
           <div>
-            <div class="number-box">
+            <div class="number-box" id="box">
               2
             </div>
             <p>
@@ -62,20 +64,31 @@
         
         <div class="input-divs">
            
-
           <div class="select-inputs">
+
             <div class="input-first">
-              <select id="skillLevelSelect" class="knowledge">
-                <option class="red" id="red" value="" selected>level of knowledge <p class="spanRed">ee</p> </option>
-                <option class="option-level" value="beginner">Beginner</option>
-                <option class="option-level" value="intermediate">Intermediate</option>
-                <option class="option-level" value="professional">Professional</option>
-              </select>
+              <div class="input">
+                <input type="text" class="red textBox" placeholder="level of knowledge" id="red" readonly />
+                <span id="placeHold" class="placeholder"></span>
+              </div>
+              <div id="skillLevelSelect" class="select">
+                <div  class="option-level">Beginner</div>
+                <div  class="option-level">Intermediate</div>
+                <div  class="option-level">Professional</div>
+              </div>
             </div>
 
-            <select id="grandmastersSelect">
-              <option class="red" value=""  selected>Choose your charracter</option>
-            </select>
+            <div class="input-firstTwo">
+              <div class="input">
+                <input type="text" class="red textBoxTwo" placeholder="choose your character" id="red" readonly />
+                <span id="placeHoldTwo" class="placeholder two"></span>
+              </div>
+              <div class="selectTwo" id="grandmastersSelect">
+                  <p class="total">
+                    (Total 4)
+                  </p>
+              </div>
+            </div>
 
           </div>
          
