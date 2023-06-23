@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Open+Sans&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  overflow-y: hidden;
+  display: flex;
+}
+.left-div {
+  display: flex;
+  flex-direction: column;
+}
+.right-div {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  height: 84px;
+  width: 923px;
+  background-color: #7025fb;
+  padding: 30px 0px 0px 60px;
+}
+.chess {
+  width: 923px;
+  height: 996px;
+}
+.right-div {
+  display: flex;
+  justify-content: center;
+  margin-left: 278px;
+}
