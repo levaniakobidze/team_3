@@ -87,6 +87,7 @@ if (localStorage.getItem("email")) {
   if (input == "") {
     span2.style.display = "block";
   }
+
 }
 
 if (localStorage.getItem("number")) {
@@ -194,11 +195,10 @@ nameinput.addEventListener("input", function () {
 });
 
 emailinput.addEventListener("input", function () {
-  const input = emailinput.value;
-  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
-  const valid = regex.test(input);
+  const regex = /[a-z0-9]+@redberry.ge/;
+  const valid = regex.test(emailinput.value);
   const span2 = document.querySelector(".span2");
-  localStorage.setItem("email", input);
+  localStorage.setItem("email", emailinput.value);
 
   if (valid) {
     picture2.style.display = "block";
@@ -206,7 +206,7 @@ emailinput.addEventListener("input", function () {
     emailinput.style.backgroundColor = "";
     emailinput.style.color = "";
     emailinvalid.style.display = "";
-  } else if (input == "") {
+  } else if (emailinput.value == "") {
     input2.style.backgroundColor = "";
     emailinput.style.backgroundColor = "";
     emailinput.style.color = "";
@@ -218,20 +218,19 @@ emailinput.addEventListener("input", function () {
     emailinput.style.color = "#DC3545";
     // emailinvalid.style.display = "block";
   }
-  if (input !== "") {
+  if (emailinput.value !== "") {
     span2.style.display = "none";
   }
-  if (input == "") {
+  if (emailinput.value == "") {
     span2.style.display = "block";
   }
 });
 
 numberinput.addEventListener("input", function () {
-  const input = numberinput.value;
   const regex = /^5\d{8}$/;
-  const valid = regex.test(input);
+  const valid = regex.test(numberinput.value);
   const span3 = document.querySelector(".span3");
-  localStorage.setItem("number", input);
+  localStorage.setItem("number", numberinput.value);
 
   if (valid) {
     picture3.style.display = "block";
@@ -239,7 +238,7 @@ numberinput.addEventListener("input", function () {
     numberinput.style.backgroundColor = "";
     numberinput.style.color = "";
     numberinvalid.style.display = "";
-  } else if (input == "") {
+  } else if (numberinput.value == "") {
     input3.style.backgroundColor = "";
     numberinput.style.backgroundColor = "";
     numberinput.style.color = "";
@@ -250,29 +249,87 @@ numberinput.addEventListener("input", function () {
     numberinput.style.backgroundColor = "#FFEFEF";
     numberinput.style.color = "#DC3545";
   }
-  if (input !== "") {
+  if (numberinput.value !== "") {
     span3.style.display = "none";
   }
-  if (input == "") {
+  if (numberinput.value == "") {
     span3.style.display = "block";
   }
 });
 
+// dateinput.addEventListener("input", function () {
+//   const regex = /^\d{2} \d{2} \d{4}$/;
+//   const regex1 = /^\d{2}-\d{2}-\d{4}$/;
+//   const valid = regex.test(dateinput.value);
+//   const valid1 = regex1.test(dateinput.value);
+//   const span4 = document.querySelector(".span4");
+//   localStorage.setItem("date", dateinput.value);
+//   if (valid || valid1) {
+//     picture4.style.display = "block";
+//     input4.style.backgroundColor = "";
+//     dateinput.style.backgroundColor = "";
+//     dateinput.style.color = "";
+//     dateinvalid.style.display = "";
+//   } else if (dateinput.value == "") {
+//     input4.style.backgroundColor = "";
+//     dateinput.style.backgroundColor = "";
+//     dateinput.style.color = "";
+//     dateinvalid.style.display = "";
+//   } else {
+//     picture4.style.display = "none";
+//     input4.style.backgroundColor = "#FFEFEF";
+//     dateinput.style.backgroundColor = "#FFEFEF";
+//     dateinput.style.color = "#DC3545";
+//   }
+//   if (dateinput.value !== "") {
+//     span4.style.display = "none";
+//   }
+//   if (dateinput.value == "") {
+//     span4.style.display = "block";
+//   }
+
+
+// });
 dateinput.addEventListener("input", function () {
-  const input = dateinput.value;
-  const regex = /^\d{2} \d{2} \d{4}$/;
-  const regex1 = /^\d{2}-\d{2}-\d{4}$/;
-  const valid = regex.test(input);
-  const valid1 = regex1.test(input);
-  const span4 = document.querySelector(".span4");
+    const input = dateinput.value;
+    const regex = /^(0[1-9]|[1-2]\d|3[0-1])\/(0[1-9]|1[0-2])\/(19\d{2}|200[0-5])$/;
+    const valid = regex.test(dateinput.value);
+    const span4 = document.querySelector(".span4");
   localStorage.setItem("date", input);
-  if (valid || valid1) {
+
+  if (input.length === 2 || input.length === 5) {
+    dateinput.value = input + "/";
+  }
+
+  if (input.length === 10) {
+    const day = input.substring(0, 2);
+    const month = input.substring(3, 5);
+    const year = input.substring(6, 10);
+    const valid = regex.test(day);
+  }
+
+    // if (valid) {
+    //   picture4.style.display = "block";
+    //   input4.style.backgroundColor = "";
+    //   dateinput.style.backgroundColor = "";
+    //   dateinput.style.color = "";
+    //   dateinvalid.style.display = "";
+    //   dateinput.value = day + "/" + month + "/" + year;
+    // } else {
+    //   picture4.style.display = "none";
+    //   input4.style.backgroundColor = "#FFEFEF";
+    //   dateinput.style.backgroundColor = "#FFEFEF";
+    //   dateinput.style.color = "#DC3545";
+    // }
+  
+
+  if (valid) {
     picture4.style.display = "block";
     input4.style.backgroundColor = "";
     dateinput.style.backgroundColor = "";
     dateinput.style.color = "";
     dateinvalid.style.display = "";
-  } else if (input == "") {
+  } else if (dateinput.value == "") {
     input4.style.backgroundColor = "";
     dateinput.style.backgroundColor = "";
     dateinput.style.color = "";
@@ -283,13 +340,15 @@ dateinput.addEventListener("input", function () {
     dateinput.style.backgroundColor = "#FFEFEF";
     dateinput.style.color = "#DC3545";
   }
+
   if (input !== "") {
     span4.style.display = "none";
-  }
-  if (input == "") {
+  } else {
     span4.style.display = "block";
   }
 });
+
+
 
 for (let k = 0; k < close1.length; k++) {
   close1[k].addEventListener("click", () => {
@@ -300,11 +359,22 @@ for (let k = 0; k < close1.length; k++) {
 }
 
 button.addEventListener("click", () => {
-  let regexName = /^[A-Za-z]{2,}$/;
+  const regexName = /^[A-Za-z]{2,}$/;
   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
   const regexNumber = /^5\d{8}$/;
   const inputName = nameinput.value;
   const regexDate = /^\d{2} \d{2} \d{4}$/;
+  if (
+    regexName.test(inputName) &&
+    regexEmail.test(emailinput.value) &&
+    regexNumber.test(numberinput.value) &&
+    regexDate.test(dateinput.value)
+  ) {
+    const pathD = document.querySelector('.path');
+    const one = document.querySelector('.one');
+    pathD.classList.toggle('pathActive');
+    one.classList.add('path');
+  };
 
   if (regexName.test(inputName)) {
     nameinput.style.color = "";
@@ -333,15 +403,20 @@ button.addEventListener("click", () => {
     emailinvalid.style.display = "none";
     numberinvalid.style.display = "none";
   }
-
+ 
   if (
-    !regexName.test(inputName) &&
-    !regexEmail.test(emailinput.value) &&
-    !regexNumber.test(numberinput.value) &&
+    !regexName.test(inputName) ||
+    !regexEmail.test(emailinput.value) ||
+    !regexNumber.test(numberinput.value) ||
     !regexDate.test(dateinput.value)
   ) {
     return;
+  }else {
+    // const pathD = document.querySelector('.path');
+    // pathD.style.display = "block";
+    window.location.replace("/experience.html");
   }
-  window.location.replace("/experience.html");
+
 });
+
 
