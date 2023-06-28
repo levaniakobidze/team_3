@@ -3,11 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 html{
     font-size: 62.5%;
-
 }
 
 body{
@@ -20,13 +17,13 @@ body{
     display: flex;
     flex-direction: column;
     width: 92.3rem;
-  }
+}
 
 .header-two {
     height: 8.4rem;
     width: 99rem;
     padding: 3rem 0px 3rem 6rem;
-  }
+}
   header{
     background-color: #7025fb;
     height: 8.4rem;
@@ -66,7 +63,6 @@ a{
     text-align: right;
     margin-top: 3.2rem;
 }
-
 .header-two{
     left: 92.3rem;
     position: absolute;
@@ -104,8 +100,7 @@ hr{
     width: 17.4rem;
     margin-top: 2rem;
     border: 1px solid rgba(185, 180, 196, 0.3);
-
-  }
+}
 .check-div div{
     display: flex;
     flex-direction: column;
@@ -116,7 +111,6 @@ hr{
     line-height: 150%;
     color: #000000;
 }
-
 .green-box, .number-box{
     display: flex;
     justify-content: center;
@@ -130,24 +124,19 @@ hr{
     line-height: 2.5rem;
     color: #212529;
 }
-
 .green-box{
     background-color: #E9FAF1;
 }
-
 .number-box{
     border: 1px solid #E5E6E8;
 }
-
 .number-boxActive{
     border: none;
     background-color: #E9FAF1;
 }
-
 .title-div{
     margin-top: 11.4rem;
 }
-
 .title-div h1{
     font-style: normal;
     font-weight: 600;
@@ -162,13 +151,9 @@ hr{
     text-transform: capitalize;
     color: #95939A;
 }
-
 .input-divs{
     margin-top: 9.5rem;
 }
-
-
-
 .red{
     cursor: pointer;
     border: none;
@@ -207,14 +192,12 @@ hr{
     overflow: hidden;
     display: none;
 }
-    .input {
+.input {
     background-color: #fff;
     border-radius: 4px;
     position: relative;
   }
-
-  
-  .placeholder {
+.placeholder {
     position: absolute;
     left: 17.6rem;
     top: 60%;
@@ -224,21 +207,19 @@ hr{
     line-height: 150%;
     color: #212529;
   }
-.two{
-    left: 21rem;
-}
-  
+
 .placeholder::after {
     content: " *";
     color: red;
-  }
-  
-  .input-first.active .placeholder::after {
+}
+
+.two{
+    left: 21rem;
+}
+.input-first.active .placeholder::after {
     visibility: hidden;
     opacity: 0;
-  }
-
-
+}
 .input-firstTwo .selectTwo{
     position: absolute;
     display: flex;
@@ -258,15 +239,12 @@ hr{
     border-radius: 4px;
     display: none;
 }
-
 .input-first.active .select{  
     display: block;
 }
 .input-firstTwo.active .selectTwo{  
     display: flex;
 }
-
-
 .input-first::before{
     content: '';
     position: relative;
@@ -299,7 +277,6 @@ hr{
     transition: 0.5s;
     pointer-events: none;
 }
-
 .input-first.active::before{
     top: 2rem;
     transform: rotate(-225deg);
@@ -328,7 +305,6 @@ hr{
     color: black;
     font-weight: 600;
 }
-
 .input-firstTwo .selectTwo div:hover{
     background-color: #F7F7F9;
     color: black;
@@ -341,8 +317,6 @@ hr{
     font-size: 2rem;
     color: red !important;
 }
-
-
 .grandmaster-option {
     display: flex;
     align-items: center;
@@ -356,7 +330,6 @@ hr{
     width: 10rem;
     height: 7.2rem;
 }
-
 .option-levelTwo{
     padding-left: 2.8rem;
     padding-right: 1.9rem;
@@ -416,8 +389,6 @@ form{
 label{
     cursor: pointer;
 }
-
-
 .last-div{
     margin-top: 17.4rem;
     display: flex;
@@ -459,11 +430,3 @@ button{
     color: white;
     border: white;
 }
-/* .req:after{
-    content:" 2";
-    color: red;
-    margin-left: 4px;
-  } */
-
-
-
