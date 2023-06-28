@@ -18,6 +18,10 @@ const close1 = document.querySelectorAll(".close");
 const invalid = document.querySelectorAll(".Invalid-div");
 const checkbox = document.querySelector(".first-box");
 const button = document.querySelector(".next");
+const regexName = /^[A-Za-z]{2,}$/;
+const regexEmail = /[a-z0-9]+@redberry.ge/;
+const regexNumber = /^5\d{8}$/;
+const regexDate = /^(0[1-9]|[1-2]\d|3[0-1])\/(0[1-9]|1[0-2])\/(19\d{2}|200[0-5])$/;
 
 let active = 0;
 if (localStorage.getItem("name")) {
@@ -161,12 +165,12 @@ if (localStorage.getItem("date")) {
   }
 }
 nameinput.addEventListener("input", function () {
-  let regex = /^[A-Za-z]{2,}$/;
   const input = nameinput.value;
   const span1 = document.querySelector(".span1");
   localStorage.setItem("name", input);
+  checkValid(regexName, regexEmail, regexNumber, regexDate);
 
-  if (regex.test(input)) {
+  if (regexName.test(input)) {
     picture1.style.display = "block";
     input1.style.backgroundColor = "";
     nameinput.style.backgroundColor = "";
@@ -195,10 +199,10 @@ nameinput.addEventListener("input", function () {
 });
 
 emailinput.addEventListener("input", function () {
-  const regex = /[a-z0-9]+@redberry.ge/;
-  const valid = regex.test(emailinput.value);
+  const valid = regexEmail.test(emailinput.value);
   const span2 = document.querySelector(".span2");
   localStorage.setItem("email", emailinput.value);
+  checkValid(regexName, regexEmail, regexNumber, regexDate);
 
   if (valid) {
     picture2.style.display = "block";
@@ -227,8 +231,7 @@ emailinput.addEventListener("input", function () {
 });
 
 numberinput.addEventListener("input", function () {
-  const regex = /^5\d{8}$/;
-  const valid = regex.test(numberinput.value);
+  const valid = regexNumber.test(numberinput.value);
   const span3 = document.querySelector(".span3");
   localStorage.setItem("number", numberinput.value);
 
@@ -290,65 +293,106 @@ numberinput.addEventListener("input", function () {
 
 
 // });
-dateinput.addEventListener("input", function () {
-    const input = dateinput.value;
-    const regex = /^(0[1-9]|[1-2]\d|3[0-1])\/(0[1-9]|1[0-2])\/(19\d{2}|200[0-5])$/;
-    const valid = regex.test(dateinput.value);
-    const span4 = document.querySelector(".span4");
-  localStorage.setItem("date", input);
 
-  if (input.length === 2 || input.length === 5) {
-    dateinput.value = input + "/";
-  }
+// dateinput.addEventListener("input", function () {
+//     const input = dateinput.value;
+//     const valid = regexDate.test(dateinput.value);
+//     const span4 = document.querySelector(".span4");
+//   localStorage.setItem("date", input);
+//   checkValid(regexName, regexEmail, regexNumber, regexDate);
 
-  if (input.length === 10) {
-    const day = input.substring(0, 2);
-    const month = input.substring(3, 5);
-    const year = input.substring(6, 10);
-    const valid = regex.test(day);
-  }
+//   if (input.length === 2 || input.length === 5) {
+//     dateinput.value = input + "/";
+//   }
 
-    // if (valid) {
-    //   picture4.style.display = "block";
-    //   input4.style.backgroundColor = "";
-    //   dateinput.style.backgroundColor = "";
-    //   dateinput.style.color = "";
-    //   dateinvalid.style.display = "";
-    //   dateinput.value = day + "/" + month + "/" + year;
-    // } else {
-    //   picture4.style.display = "none";
-    //   input4.style.backgroundColor = "#FFEFEF";
-    //   dateinput.style.backgroundColor = "#FFEFEF";
-    //   dateinput.style.color = "#DC3545";
-    // }
+//   if (input.length === 8) {
+//     const day = input.substring(0, 2);
+//     const month = input.substring(3, 5);
+//     const year = input.substring(6, 10);
+//     const valid = regexDate.test(input);
   
 
-  if (valid) {
-    picture4.style.display = "block";
-    input4.style.backgroundColor = "";
-    dateinput.style.backgroundColor = "";
-    dateinput.style.color = "";
-    dateinvalid.style.display = "";
-  } else if (dateinput.value == "") {
-    input4.style.backgroundColor = "";
-    dateinput.style.backgroundColor = "";
-    dateinput.style.color = "";
-    dateinvalid.style.display = "";
-  } else {
-    picture4.style.display = "none";
-    input4.style.backgroundColor = "#FFEFEF";
-    dateinput.style.backgroundColor = "#FFEFEF";
-    dateinput.style.color = "#DC3545";
-  }
+//     if (valid) {
+//       picture4.style.display = "block";
+//       input4.style.backgroundColor = "";
+//       dateinput.style.backgroundColor = "";
+//       dateinput.style.color = "";
+//       dateinvalid.style.display = "";
+//       dateinput.value = day + "/" + month + "/" + year;
+//     }  else if (dateinput.value == "") {
+//             input4.style.backgroundColor = "";
+//             dateinput.style.backgroundColor = "";
+//             dateinput.style.color = "";
+//             dateinvalid.style.display = "";
+//           } else {
+//             picture4.style.display = "none";
+//             input4.style.backgroundColor = "#FFEFEF";
+//             dateinput.style.backgroundColor = "#FFEFEF";
+//             dateinput.style.color = "#DC3545";
+//           }
+// }
 
-  if (input !== "") {
-    span4.style.display = "none";
-  } else {
-    span4.style.display = "block";
-  }
-});
+//   if (input !== "") {
+//     span4.style.display = "none";
+//   } else {
+//     span4.style.display = "block";
+//   }
+// });
 
-
+dateinput.addEventListener("input", function (event) {
+    const input = dateinput.value;
+    const valid = regexDate.test(dateinput.value);
+    const span4 = document.querySelector(".span4");
+    localStorage.setItem("date", input);
+    checkValid(regexName, regexEmail, regexNumber, regexDate);
+  
+    if (input.length === 2 || input.length === 5) {
+      if (event.inputType !== "deleteContentBackward") {
+        dateinput.value = input + "/";
+      }
+    }
+  
+    if (input.length >= 10) {
+      const day = input.substring(0, 2);
+      const month = input.substring(3, 5);
+      const year = input.substring(6, 10);
+  
+      // Format number and replace non-digit characters
+      const sanitizedNumber = input.substring(0, 10).replace(/\D/g, '');
+      const formattedNumber = sanitizedNumber.replace(/(\d{2})(\d{2})(\d{4})/, "$1/$2/$3");
+  
+      if (formattedNumber !== input.substring(0, 10)) {
+        dateinput.value = formattedNumber;
+      }
+  
+      const valid = regexDate.test(dateinput.value);
+  
+      if (valid) {
+        picture4.style.display = "block";
+        input4.style.backgroundColor = "";
+        dateinput.style.backgroundColor = "";
+        dateinput.style.color = "";
+        dateinvalid.style.display = "";
+        dateinput.value = day + "/" + month + "/" + year;
+      } else if (dateinput.value === "") {
+        input4.style.backgroundColor = "";
+        dateinput.style.backgroundColor = "";
+        dateinput.style.color = "";
+        dateinvalid.style.display = "";
+      } else {
+        picture4.style.display = "none";
+        input4.style.backgroundColor = "#FFEFEF";
+        dateinput.style.backgroundColor = "#FFEFEF";
+        dateinput.style.color = "#DC3545";
+      }
+    }
+  
+    if (input !== "") {
+      span4.style.display = "none";
+    } else {
+      span4.style.display = "block";
+    }
+  });
 
 for (let k = 0; k < close1.length; k++) {
   close1[k].addEventListener("click", () => {
@@ -357,6 +401,20 @@ for (let k = 0; k < close1.length; k++) {
     }
   });
 }
+//check 4 input, if they valid check icon display change
+function checkValid(regexName, regexEmail, regexNumber, regexDate){
+    if (
+        regexName.test(nameinput.value) &&
+        regexEmail.test(emailinput.value) &&
+        regexNumber.test(numberinput.value) &&
+        regexDate.test(dateinput.value)
+      ) {
+        const pathD = document.querySelector('.path');
+        const one = document.querySelector('.one');
+        pathD.classList.toggle('pathActive');
+        one.classList.add('path');
+      };
+};
 
 button.addEventListener("click", () => {
   const regexName = /^[A-Za-z]{2,}$/;
@@ -364,17 +422,7 @@ button.addEventListener("click", () => {
   const regexNumber = /^5\d{8}$/;
   const inputName = nameinput.value;
   const regexDate = /^\d{2} \d{2} \d{4}$/;
-  if (
-    regexName.test(inputName) &&
-    regexEmail.test(emailinput.value) &&
-    regexNumber.test(numberinput.value) &&
-    regexDate.test(dateinput.value)
-  ) {
-    const pathD = document.querySelector('.path');
-    const one = document.querySelector('.one');
-    pathD.classList.toggle('pathActive');
-    one.classList.add('path');
-  };
+ 
 
   if (regexName.test(inputName)) {
     nameinput.style.color = "";
