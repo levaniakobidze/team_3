@@ -6,7 +6,6 @@
 html{
     font-size: 62.5%;
 }
-
 body{
     font-family: 'Open Sans';
     display: flex;
@@ -124,6 +123,7 @@ hr{
     line-height: 2.5rem;
     color: #212529;
 }
+
 .green-box{
     background-color: #E9FAF1;
 }

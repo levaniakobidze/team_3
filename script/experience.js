@@ -45,9 +45,39 @@ done.addEventListener('click', ()=>{
     if(!storedLevel || !storedParticipate || !storedCharacter){
         return;
     }else{
-        window.location.assign('completed.html');
+       
+
+        const url = 'https://chess-tournament-api.devtest.ge/api/register';
+        
+        const data = {
+         name: localStorage.getItem('name'),
+        email: localStorage.getItem('email'),
+        phone: localStorage.getItem('number'),
+        date_of_birth: localStorage.getItem('date'),
+        experience_level: localStorage.getItem('level'),
+        already_participated: localStorage.getItem('participate')==='yes'?true:false,
+        character_id: localStorage.getItem('character_id')
+        };
+        const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+        };
+
+        fetch(url, options)
+        .then(response => response.json())
+        .then(data => {
+            window.location.assign('completed.html');
+            console.log(data); // Handle the response data
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
-    fetch('')
+
+    // fetch('')
         localStorage.clear();
         document.getElementById('yes-input').checked=false;
         document.getElementById('no-input').checked=false;
@@ -62,6 +92,7 @@ inputFirst.addEventListener('click', () => {
 inputFirstTwo.addEventListener('click',() =>{
     inputFirstTwo.classList.toggle('active');
     redFlagTwo.classList.remove('placeholder');
+
 } )
 
 optionLevel.forEach((element) => {
@@ -104,11 +135,12 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
 
                 const optionLevelTwo = document.querySelectorAll('.option-levelTwo');
 
-                optionLevelTwo.forEach((element) => {
+                optionLevelTwo.forEach((element, index) => {
                         element.addEventListener('click', () => {
                             document.querySelector('.textBoxTwo').value = element.childNodes[0].innerText;
                             greenBox.classList.add('number-boxActive');
                             localStorage.setItem('character', element.textContent);
+                            localStorage.setItem('character_id', index+1);
                     });
                 })           
             });
