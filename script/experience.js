@@ -10,7 +10,6 @@ const redFlagTwo = document.getElementById('placeHoldTwo');
 const greenBox = document.getElementById('box');
 const done = document.getElementById('done-valid');
 
-
 // Retrieve stored values from localStorage
 const storedLevel = localStorage.getItem('level');
 const storedCharacter = localStorage.getItem('character');
@@ -38,8 +37,8 @@ if (storedParticipate) {
     else if(storedParticipate=='no'){
         document.getElementById('no-input').checked=true;
     }
-  spans.classList.add('none');
-  greenBox.classList.add('number-boxActive');
+    spans.classList.add('none');
+    greenBox.classList.add('number-boxActive');
 }
 
 done.addEventListener('click', ()=>{
@@ -79,8 +78,6 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
         .then(grandmasters => {
             const select = document.getElementById('grandmastersSelect');
 
-
-
             grandmasters.forEach(grandmaster => {
                 const name = grandmaster.name;
                 const id = grandmaster.id;
@@ -91,12 +88,10 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
                 const span = document.createElement('span');
                 const image = document.createElement('img');
              
-    
                 image.src = imageUrl;
                 image.alt = name;
                 image.classList.add('grandmaster-image');
                 span.classList.add('grandmaster-option');
-
 
                 // Create a text node for the grandmaster name
                 const textNode = document.createTextNode(name);
@@ -116,7 +111,6 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
                             localStorage.setItem('character', element.textContent);
                     });
                 })           
-              
             });
         })
         .catch(error => {
@@ -125,13 +119,13 @@ fetch('https://chess-tournament-api.devtest.ge/api/grandmasters')
 
 radioCheck.forEach((element)=>{
     const spans = document.getElementById('spanR');
-
     element.addEventListener('click', (event) =>  {
         spans.classList.add('none');
         greenBox.classList.add('number-boxActive');
         localStorage.setItem('participate', event.target.value);
     });   
 });
+
 
 
 
