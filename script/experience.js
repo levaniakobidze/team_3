@@ -20,7 +20,6 @@ if (storedLevel) {
   document.querySelector('.textBox').value = storedLevel;
   greenBox.classList.add('number-boxActive');
   redFlag.classList.remove('placeholder');
-
 }
 
 if (storedCharacter) {
@@ -42,6 +41,9 @@ if (storedParticipate) {
 }
 
 done.addEventListener('click', ()=>{
+    const storedLevel = localStorage.getItem('level');
+    const storedCharacter = localStorage.getItem('character');
+    const storedParticipate = localStorage.getItem('participate');
     if(!storedLevel || !storedParticipate || !storedCharacter){
         return;
     }else{
