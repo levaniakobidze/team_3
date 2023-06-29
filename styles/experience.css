@@ -430,10 +430,12 @@ button{
     background-color: #95939A;
     color: white;
     border: white;
+    transition: 0.4s;
 }
 .done{
     color: white;
     background-color: #212529;
+    transition: 0.4s;
 }
 .done:hover{
     background-color: #95939A;

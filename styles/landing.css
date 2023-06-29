@@ -76,6 +76,14 @@ h2 {
   margin-top: 102px;
   margin-left: 85px;
 }
+.button:hover{
+
+    background-color: #95939A;
+    color: white;
+    border: white;
+    transition: 0.4s;
+
+}
 .button-text {
   font-family: Open Sans;
   font-size: 20px;

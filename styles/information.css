@@ -232,7 +232,7 @@ input:hover{
 }
 a{
   text-decoration: none;
-  color: #212529;
+  color: inherit;
   
 }
 a:hover {
@@ -340,7 +340,7 @@ a:hover {
   left: 160px;
 }
 .span4{
-  left: 134px;
+  left: 137px;
 }
 .span1::after {
   content: " *";
@@ -425,6 +425,7 @@ a:hover {
     background-color: #95939A;
     color: white;
     border: white;
+    transition: 0.4s;
 }
 .next {
   height: 53px;
@@ -447,4 +448,5 @@ a:hover {
     background-color: #95939A;
     color: white;
     border: white;
+    transition: 0.4s;
 }
