@@ -17,6 +17,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+a{
+  text-decoration: none;
+}
 header {
   height: 84px;
   width: 923px;
