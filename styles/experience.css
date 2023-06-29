@@ -86,13 +86,13 @@ a{
     padding-left: 4.8rem;
 }
 .check-div{
-    margin-top: 14.4rem;
+    margin-top: 14.6rem;
     display: flex;
     flex-direction: row;
 }
 .hr{
-    margin-left: 3rem;
-    margin-right: 4.4rem;
+    margin-left: 3.2rem;
+    margin-right: 4.6rem;
 }
 hr{
     position: absolute;
@@ -169,7 +169,6 @@ hr{
     font-size: 2rem;
     line-height: 150%;
     color: #212529;
-    margin-left: -1rem;
     z-index: 1;
 }
 .input-first .select{
@@ -181,6 +180,7 @@ hr{
     padding: 2rem 0 2rem;
     gap: 2rem;
     margin-top: 0.4rem;
+    margin-left: 1rem;
     font-weight: 400;
     font-size: 2rem;
     line-height: 150%;
@@ -197,15 +197,22 @@ hr{
     border-radius: 4px;
     position: relative;
   }
+  ::placeholder{
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 150%;
+    color: #212529;
+  }
 .placeholder {
     position: absolute;
-    left: 17.6rem;
+    left: 18.5rem;
     top: 60%;
     transform: translateY(-50%);
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 150%;
-    color: #212529;
+
+    color: rgba(33, 37, 41, 1) !important;
   }
 
 .placeholder::after {
@@ -214,7 +221,7 @@ hr{
 }
 
 .two{
-    left: 21rem;
+    left: 22.4rem;
 }
 .input-first.active .placeholder::after {
     visibility: hidden;
@@ -314,7 +321,7 @@ hr{
     display: none;
 }
 .spanRed{
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: red !important;
 }
 .grandmaster-option {
@@ -349,6 +356,7 @@ hr{
     flex-direction: column;
     margin-top: 8.8rem;
     gap: 2rem;
+    margin-left: 1.6rem;
 }
 .radio {
     cursor: pointer;
@@ -370,14 +378,16 @@ hr{
 .input-radio p{
     font-weight: 400;
     font-size: 2rem;
-    line-height: 150%;
+    line-height: 3rem;
     color: #212529;
 }
+
 form{
     display: flex;
     flex-direction: row;
     text-align: center;
     gap: 1.8rem;
+    margin-left: 0.6rem;
 
     font-family: 'Open Sans';
     font-style: normal;

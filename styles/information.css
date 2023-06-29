@@ -10,6 +10,7 @@ html{
 }
 
 body {
+  overflow-x: hidden;
   display: flex;
 }
 
@@ -66,8 +67,8 @@ header {
 }
 
 .white-container {
-  width: 997px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
   background-color: white;
   padding-top: 30px;
   position: relative;
@@ -82,7 +83,7 @@ h5 {
   text-align: left;
   height: 24px;
   width: 215px;
-  margin-left: 48px;
+  margin-left: 60px;
 }
 
 .hr {
@@ -131,6 +132,23 @@ h5 {
 .pathActive{
   display: block;
 }
+.none{
+  display: none;
+}
+.emailInputRed{
+  background-color: #FFEFEF;
+  color: #DC3545;
+}
+input::placeholder{
+    font-weight: normal;
+    color: transparent;
+}
+input.input::placeholder{
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #212529;
+}
 .second-box {
   height: 40px;
   width: 40px;
@@ -145,7 +163,7 @@ h5 {
   line-height: 25px;
   letter-spacing: 0em;
   color: #95939a;
-  background-color: #e5e6e8;
+  background-color: #F5F5F5;
 }
 
 .Personal-information {
@@ -173,8 +191,9 @@ h5 {
 .description-div {
   display: flex;
   flex-direction: row;
-  gap: 77px;
+  gap: 77.5px;
   margin-left: 48px;
+  margin-top: 4px;
 }
 
 h6 {
@@ -187,7 +206,7 @@ h6 {
   letter-spacing: 0em;
   text-align: left;
   margin-left: 48px;
-  margin-top: 112px;
+  margin-top: 114px;
 }
 
 .basic-informaton {
@@ -201,7 +220,6 @@ h6 {
   text-align: left;
   color: #95939a;
   margin-left: 48px;
-  margin-top: 3px;
 }
 
 .Invalid-div {
@@ -275,7 +293,7 @@ h6 {
   flex-direction: column;
   gap: 40px;
   margin-left: 48px;
-  margin-top: 85px;
+  margin-top: 95px;
 }
 
 .inputcontainer {
@@ -285,31 +303,31 @@ h6 {
   position: relative;
 }
 
-.span1 {
+
+
+.span4, .span1, .span2, .span3{
   position: absolute;
-  left: 60px;
-  top: 59%;
-  transform: translateY(-50%);
+  top: 60%;
+  transform: translateY(-70%);
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
+  font-size: 1.5rem;
   color: #212529;
 }
-
+.span1{
+  left: 75px;
+}
+.span2{
+  left: 149px;
+}
+.span3{
+  left: 160px;
+}
+.span4{
+  left: 134px;
+}
 .span1::after {
   content: " *";
   color: red;
-}
-
-.span2 {
-  position: absolute;
-  left: 60px;
-  top: 59%;
-  transform: translateY(-50%);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
-  color: #212529;
 }
 
 .span2::after {
@@ -317,33 +335,10 @@ h6 {
   color: red;
 }
 
-.span3 {
-  position: absolute;
-  left: 130px;
-  top: 59%;
-  transform: translateY(-50%);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
-  color: #212529;
-}
-
 .span3::after {
   content: " *";
   color: red;
 }
-
-.span4 {
-  position: absolute;
-  left: 110px;
-  top: 59%;
-  transform: translateY(-50%);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
-  color: #212529;
-}
-
 .span4::after {
   content: " *";
   color: red;
@@ -356,11 +351,13 @@ h6 {
   background-color: white;
   border-color: rgb(234, 231, 231);
   outline: none;
-  font-family: "Open Sans";
-  font-size: 16px;
+  font-family: Open Sans;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 30px;
   letter-spacing: 0em;
+  text-align: left;
+  
   text-align: left;
   color: #212529;
   padding-left: 10px;
@@ -384,9 +381,10 @@ h6 {
 .button-div {
   display: flex;
   flex-direction: row;
-  gap: 560px;
+  justify-content: space-between;
   margin-left: 48px;
-  margin-top: 88px;
+  padding-right: 14rem;
+  margin-top: 89px;
 }
 .back {
     cursor: pointer;
@@ -401,7 +399,10 @@ h6 {
     font-size: 2rem;
     line-height: 2.7rem;
     text-transform: capitalize;
-    margin-bottom: 15rem;
+    /* margin-bottom: 15rem; */
+    border: 1px solid #212529;
+    background-color: white;
+    color: #212529;
 }
 .back:hover{
     background-color: #95939A;
