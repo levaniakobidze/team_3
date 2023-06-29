@@ -72,7 +72,6 @@ done.addEventListener('click', ()=>{
         .then(response => response.json())
         .then(data => {
             window.location.assign('completed.html');
-            console.log(data); // Handle the response data
         })
         .catch(error => {
             console.error('Error:', error);
