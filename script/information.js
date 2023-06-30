@@ -290,7 +290,3 @@ function checkValid(regexName, regexEmail, regexNumber, regexDate){
         one.classList.add('none');
       }
 };
-
-
-
-
